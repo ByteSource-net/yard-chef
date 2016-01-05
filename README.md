@@ -186,9 +186,9 @@ To add long description of recipe, please add in the begining of your recipe com
 cluster_name = ENV['OPSCODE_ORGNAME']
 ```
 
-Comment section beggining from `*Description*` till `...` will be used as detailed description of recipe in 
+Comment section beggining from `*Description*` till `...` will be used as detailed description of recipe in
 **Recipe details** section of cookbook documentation.
-Please note, that first line of your code in recipe should have it own comment, in example above `cluster_name = ENV['OPSCODE_ORGNAME']` 
+Please note, that first line of your code in recipe should have it own comment, in example above `cluster_name = ENV['OPSCODE_ORGNAME']`
 have its own comment.
 
 You can also use tags `@note` and `@example` like for providers.
@@ -206,7 +206,7 @@ This fields will be used in cookbooks list on the index page of your cookbooks d
 
 #### Cookbook Dependencies
 
-Please describe each dependency of your cookbook with `depends` keyword in `metadata.rb` and place proper comment, why 
+Please describe each dependency of your cookbook with `depends` keyword in `metadata.rb` and place proper comment, why
 this dependency needed.
 
 ```ruby
@@ -293,6 +293,18 @@ generated ./doc directory.  Once there run:
 
 Add a ```-d``` option flag to run the server in daemon mode.  For more
 information about YARD server see [http://yardoc.org/](http://rubydoc.info/docs/yard/file/docs/GettingStarted.md#yard_Executable)
+
+## Development
+
+### Testing
+
+To run tests use these
+
+```
+bundle install --path=.bundle
+bundle exec rake yard
+bundle exec rake serverspec
+```
 
 ## License
 
